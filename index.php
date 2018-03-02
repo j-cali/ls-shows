@@ -28,36 +28,48 @@ require('layout/header.php');
       <div class="col-xs-2 col-sm-4 col-md-4 col-lg-4 offset-lg-1">
          <h1>ls-shows</h1>
          <p class="lead">Sign up now and start adding to your list!</p>
+         <div id="valid-signup"></div>
       </div>
+      
+      
+      <!-- MAIN FORM CONTAINER -->
       <div class="col-xs-10 col-sm-8 col-md-8 col-lg-6">
-         <form role="form" method="post" action="" autocomplete="off">
+         <form id="user-form" role="form" autocomplete="off" class="needs-validation" novalidate>
             <p>Already a member? <a href='.'>Login</a></p>
             <hr>
-            <div class="form-group">
-               <input type="text" name="username" id="username" class="form-control input-lg" placeholder="User Name" 
-               		value="" tabindex="1">
+                        
+            <!-- FORM INFO -->
+            <div id="username-div" class="input-group mb-4">
+			  <div class="input-group-prepend">
+			    <span class="input-group-text" id="basic-addon1">username</span>
+			  </div>				
+              <input type="text" name="username" id="username" class="form-control input-lg" 
+              	placeholder="User Name" tabindex="1">
+              	<div id="err-msg-username" class="invalid-feedback"></div>
             </div>
-            <div class="form-group">
+            
+            <div id="email-div" class="input-group mb-4">
+			  <div class="input-group-prepend">
+			    <span class="input-group-text" id="basic-addon1">e-mail</span>
+			  </div>
                <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" 
-               		value="" tabindex="2">
+               		tabindex="2">
+               <div id="err-msg-email" class="invalid-feedback"></div>
             </div>
-            <div class="row">
-               <div class="col-xs-6 col-sm-6 col-md-6">
-                  <div class="form-group">
-                     <input type="password" name="password" id="password" class="form-control input-lg" 
+            
+            <div id="password-div" class="input-group mb-4">
+			  <div class="input-group-prepend">
+			    <span class="input-group-text" id="basic-addon1">password</span>
+			  </div>
+              	<input type="password" name="password" id="password" class="form-control input-lg" 
                      	placeholder="Password" tabindex="3">
-                  </div>
-               </div>
-               <div class="col-xs-6 col-sm-6 col-md-6">
-                  <div class="form-group">
-                     <input type="password" name="passwordConfirm" id="passwordConfirm" class="form-control input-lg" 
-                     	placeholder="Confirm Password" tabindex="4">
-                  </div>
-               </div>
+               <div id="err-msg-password" class="invalid-feedback"></div>
             </div>
+    
+                      
             <div class="row">
                <div class="col-xs-6 col-md-6"><input type="submit" name="submit" value="Register" 
-               		class="btn btn-primary btn-block btn-lg" tabindex="5"></div>
+               		class="btn btn-primary btn-block btn-lg" tabindex="4"></div>
             </div>
          </form>
       </div>
@@ -66,9 +78,9 @@ require('layout/header.php');
 
 <!-- Bootstrap core JavaScript -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+<script src="js/form_post.js"></script>
 <?php
 //include header template
 require('layout/footer.php');
